@@ -622,6 +622,81 @@
             animation: pulse 1.5s ease-in-out infinite;
         }
 
+        /* Vivek Stats & Analytics */
+        .stats-section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 60px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--beige) 100%);
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: default;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.2);
+        }
+
+        .stat-emoji {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .stat-number {
+            font-family: 'Righteous', cursive;
+            font-size: 2.2rem;
+            color: var(--soft-red);
+            display: block;
+        }
+
+        .stat-bar-container {
+            background: rgba(255, 179, 217, 0.3);
+            border-radius: 10px;
+            height: 14px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .stat-bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--coral) 0%, var(--soft-red) 100%);
+            width: 0%;
+            transition: width 1.5s ease-out;
+        }
+
+        .stat-bar-label {
+            font-size: 0.75rem;
+            color: var(--text);
+            opacity: 0.7;
+            margin-top: 6px;
+            text-align: right;
+            font-style: italic;
+        }
+
         /* Bingo Section */
         .bingo-section {
             background: white;
@@ -956,6 +1031,82 @@
             </div>
         </section>
 
+        <!-- Vivek Stats & Analytics Section -->
+        <section class="stats-section" id="statsSection">
+            <h2 class="section-title">Vivek Stats & Analytics 📊</h2>
+            <p style="text-align: center; margin-bottom: 10px; font-size: 1.1rem; color: var(--text);">
+                Our relationship, but make it data 🧐💕
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-emoji">⏳</div>
+                    <div class="stat-label">Times he said "bas 5 minute"</div>
+                    <span class="stat-number" data-target="4782">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-emoji">😤</div>
+                    <div class="stat-label">Fights started for absolutely no reason</div>
+                    <span class="stat-number" data-target="156">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-emoji">😂</div>
+                    <div class="stat-label">Times he made me laugh</div>
+                    <span class="stat-number" data-target="0">∞</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-emoji">📱</div>
+                    <div class="stat-label">Memes sent at 2 AM</div>
+                    <span class="stat-number" data-target="1247">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-emoji">😴</div>
+                    <div class="stat-label">Times he fell asleep on call</div>
+                    <span class="stat-number" data-target="89">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-emoji">🥺</div>
+                    <div class="stat-label">Times I thought "I'm so lucky"</div>
+                    <span class="stat-number" data-target="0">∞</span>
+                </div>
+            </div>
+
+            <div class="stats-grid" style="margin-top: 30px;">
+                <div class="stat-card" style="grid-column: span 1;">
+                    <div class="stat-emoji">💬</div>
+                    <div class="stat-label">Texting Speed</div>
+                    <div class="stat-bar-container"><div class="stat-bar" data-width="15"></div></div>
+                    <div class="stat-bar-label">Needs serious improvement 🙄</div>
+                </div>
+
+                <div class="stat-card" style="grid-column: span 1;">
+                    <div class="stat-emoji">🥰</div>
+                    <div class="stat-label">Cuteness Level</div>
+                    <div class="stat-bar-container"><div class="stat-bar" data-width="100"></div></div>
+                    <div class="stat-bar-label">Off the charts 💯</div>
+                </div>
+
+                <div class="stat-card" style="grid-column: span 1;">
+                    <div class="stat-emoji">👂</div>
+                    <div class="stat-label">Listening Skills</div>
+                    <div class="stat-bar-container"><div class="stat-bar" data-width="25"></div></div>
+                    <div class="stat-bar-label">"Haan haan" doesn't count 😒</div>
+                </div>
+
+                <div class="stat-card" style="grid-column: span 1;">
+                    <div class="stat-emoji">❤️</div>
+                    <div class="stat-label">How Much I Love Him</div>
+                    <div class="stat-bar-container"><div class="stat-bar" data-width="100"></div></div>
+                    <div class="stat-bar-label">Even when he's annoying 💘</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Easter Egg Surprises Section -->
         <section class="surprises">
             <h2 class="section-title">Special Messages For You 💌</h2>
@@ -1150,6 +1301,50 @@
         envelope.addEventListener('click', () => {
             envelope.classList.toggle('open');
         });
+
+        // Stats counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-target]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                if (target === 0) return; // Skip infinity symbols
+                const duration = 2000;
+                const steps = 60;
+                const increment = target / steps;
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, duration / steps);
+            });
+
+            // Animate bars
+            const bars = document.querySelectorAll('.stat-bar[data-width]');
+            bars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 300);
+            });
+        }
+
+        // Trigger stats animation when section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const statsSection = document.getElementById('statsSection');
+        if (statsSection) statsObserver.observe(statsSection);
 
         // Bingo logic
         const bingoState = Array(25).fill(false);
